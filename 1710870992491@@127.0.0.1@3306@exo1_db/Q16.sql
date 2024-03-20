@@ -1,1 +1,0 @@
-SELECT `ProductName` FROM products ORDER BY `Price` DESC LIMIT 1

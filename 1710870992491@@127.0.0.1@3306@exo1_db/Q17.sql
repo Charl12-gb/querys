@@ -1,1 +1,0 @@
-SELECT UserID, FirstName, LastName, Age FROM users WHERE Age > (SELECT AVG(`Age`) FROM users);

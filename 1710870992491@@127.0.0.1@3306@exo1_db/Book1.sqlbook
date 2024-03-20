@@ -1,0 +1,157 @@
+-- SQLBook: Markup
+Voici une série de questions SQL basées sur ces tables :
+
+1. Affichez tous les utilisateurs.
+2. Affichez le prénom et le nom de tous les utilisateurs.
+3. Combien d'utilisateurs ont un âge supérieur à 30 ans?
+4. Quels sont les emails des utilisateurs dont le prénom commence par "J"?
+5. Affichez tous les produits.
+6. Affichez les noms des produits et leur prix.
+7. Quels sont les produits dont le prix est supérieur à 50?
+8. Combien de produits sont disponibles dans la catégorie "Électronique"?
+9. Affichez les produits en ordre décroissant de leur prix.
+10. Quel est le produit le moins cher?
+11. Quel est l'âge moyen des utilisateurs?
+12. Quel est le prix moyen des produits?
+13. Affichez le nombre d'utilisateurs par catégorie d'âge (par exemple : 0-20 ans, 21-30 ans, etc.).
+14. Affichez le nombre de produits par catégorie.
+15. Quel est le produit le plus cher?
+16. Quel est le nom du produit le plus cher?
+17. Affichez le prénom, le nom et l'âge de tous les utilisateurs dont l'âge est supérieur à la moyenne.
+18. Quels sont les utilisateurs dont l'email se termine par "@example.com"?
+19. Quel est le nombre total de produits en stock?
+20. Quel est le prix total de tous les produits en stock?
+-- SQLBook: Code
+-- Create Table
+
+CREATE TABLE Users (
+    UserID SERIAL PRIMARY KEY,
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255),
+    Email VARCHAR(255),
+    Age INT,
+    create_time DATE
+);
+
+CREATE TABLE Categories (
+    CategoryId SERIAL PRIMARY KEY,
+    Name VARCHAR(255),
+    create_time DATE
+);
+
+CREATE TABLE Products (
+    ProductId SERIAL PRIMARY KEY,
+    ProductName VARCHAR(255) NOT NULL,
+    CategoryId INT,
+    FOREIGN KEY (CategoryId) REFERENCES Categories(CategoryId),
+    Price DECIMAL(10, 2),
+    StockQuantity INT,
+    create_time DATE
+);
+
+-- SQLBook: Code
+-- Insertion database
+
+INSERT INTO Users (FirstName, LastName, Email, Age, create_time) 
+VALUES 
+    ('John', 'Doe', 'john.doe@example.com', 30, CURRENT_DATE),
+    ('Alice', 'Smith', 'alice.smith@example.com', 25, CURRENT_DATE),
+    ('Bob', 'Johnson', 'bob.johnson@example.com', 35, CURRENT_DATE),
+    ('Emily', 'Brown', 'emily.brown@example.com', 28, CURRENT_DATE),
+    ('Michael', 'Wilson', 'michael.wilson@example.com', 40, CURRENT_DATE),
+    ('Emma', 'Jones', 'emma.jones@example.com', 22, CURRENT_DATE),
+    ('David', 'Taylor', 'david.taylor@example.com', 33, CURRENT_DATE),
+    ('Sophia', 'Martinez', 'sophia.martinez@example.com', 29, CURRENT_DATE),
+    ('James', 'Anderson', 'james.anderson@example.com', 31, CURRENT_DATE),
+    ('Olivia', 'Thomas', 'olivia.thomas@example.com', 27, CURRENT_DATE);
+
+
+INSERT INTO Categories (Name, create_time) 
+VALUES 
+    ('Electronics', CURRENT_DATE),
+    ('Clothing', CURRENT_DATE),
+    ('Home & Garden', CURRENT_DATE),
+    ('Books', CURRENT_DATE),
+    ('Sports & Outdoors', CURRENT_DATE),
+    ('Toys & Games', CURRENT_DATE),
+    ('Health & Beauty', CURRENT_DATE),
+    ('Automotive', CURRENT_DATE),
+    ('Food & Grocery', CURRENT_DATE),
+    ('Music & Movies', CURRENT_DATE);
+
+
+INSERT INTO Products (ProductName, CategoryId, Price, StockQuantity, create_time) 
+VALUES 
+    ('Smartphone', 1, 599.99, 100, CURRENT_DATE),
+    ('Laptop', 1, 999.99, 50, CURRENT_DATE),
+    ('T-shirt', 2, 19.99, 200, CURRENT_DATE),
+    ('Jeans', 2, 39.99, 150, CURRENT_DATE),
+    ('Sofa', 3, 799.99, 20, CURRENT_DATE),
+    ('Coffee Table', 3, 149.99, 30, CURRENT_DATE),
+    ('Harry Potter Book Set', 4, 49.99, 100, CURRENT_DATE),
+    ('Football', 5, 29.99, 50, CURRENT_DATE),
+    ('Board Game', 6, 24.99, 80, CURRENT_DATE),
+    ('Shampoo', 1, 9.99, 150, CURRENT_DATE);
+
+-- SQLBook: Code
+-- 1
+SELECT * FROM users;
+-- SQLBook: Code
+-- 2
+SELECT FirstName, LastName FROM users;
+-- SQLBook: Code
+-- 3
+SELECT count(*) from users where age > 30;
+-- SQLBook: Code
+-- 4
+Select email FROM users WHERE FirstName LIKE 'J%';
+-- SQLBook: Code
+-- 5
+SELECT * FROM products;
+-- SQLBook: Code
+-- 6
+SELECT productname, price from products;
+-- SQLBook: Code
+-- 7
+SELECT * from products WHERE price > 50;
+-- SQLBook: Code
+-- 8
+SELECT count(*) 
+FROM categories, products 
+WHERE categories.categoryid=products.categoryid AND categories.name = 'Electronics';
+-- SQLBook: Code
+-- 9
+SELECT * FROM products ORDER BY price DESC;
+-- SQLBook: Code
+-- 10
+SELECT * FROM products ORDER BY `Price` ASC LIMIT 1;
+-- SQLBook: Code
+-- 11
+SELECT AVG(age) FROM users;
+-- SQLBook: Code
+-- 12
+SELECT AVG(price) FROM products;
+-- SQLBook: Code
+-- 13
+SELECT age, COUNT(*) FROM users GROUP BY age;
+-- SQLBook: Code
+-- 14
+SELECT categories.Name, COUNT(*) as Nbre FROM categories INNER JOIN products ON categories.CategoryId=products.CategoryId GROUP BY `Name`
+-- SQLBook: Code
+-- 15
+SELECT * FROM products ORDER BY `Price` DESC LIMIT 1
+-- SQLBook: Code
+-- 16
+SELECT `ProductName` FROM products ORDER BY `Price` DESC LIMIT 1
+-- SQLBook: Code
+-- 17
+SELECT UserID, FirstName, LastName, Age FROM users WHERE Age > (SELECT AVG(`Age`) FROM users);
+-- SQLBook: Code
+-- 18
+SELECT * FROM users WHERE Email LIKE '%@example.com';
+-- SQLBook: Code
+-- 19
+SELECT sum(StockQuantity) FROM products;
+-- SQLBook: Code
+-- 20
+SELECT SUM(price*StockQuantity) FROM products;

@@ -1,1 +1,0 @@
-SELECT * FROM products ORDER BY `Price` ASC LIMIT 1;

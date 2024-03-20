@@ -1,1 +1,0 @@
-SELECT SUM(price*StockQuantity) FROM products;

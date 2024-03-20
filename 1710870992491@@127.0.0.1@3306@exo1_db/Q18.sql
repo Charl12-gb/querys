@@ -1,1 +1,0 @@
-SELECT * FROM users WHERE Email LIKE '%@example.com';

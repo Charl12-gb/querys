@@ -1,1 +1,0 @@
-SELECT sum(StockQuantity) FROM products;

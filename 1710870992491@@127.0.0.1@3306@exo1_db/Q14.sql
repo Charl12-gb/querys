@@ -1,0 +1,2 @@
+-- SELECT categories.Name, COUNT(*) as Nbre FROM categories, products WHERE categories.CategoryId = products.CategoryId GROUP BY categories.Name;
+SELECT categories.Name, COUNT(*) as Nbre FROM categories INNER JOIN products ON categories.CategoryId=products.CategoryId GROUP BY `Name`

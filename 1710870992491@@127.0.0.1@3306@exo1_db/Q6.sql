@@ -1,0 +1,1 @@
+SELECT productname, price from products;

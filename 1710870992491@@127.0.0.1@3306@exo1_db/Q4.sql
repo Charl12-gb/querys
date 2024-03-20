@@ -1,0 +1,1 @@
+Select email FROM users WHERE FirstName LIKE 'J%';

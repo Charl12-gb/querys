@@ -1,0 +1,53 @@
+-- SQLBook: Markup
+Voici une liste de 50 questions de requêtes SQL avancées pour les tables que vous avez fournies, en prenant en compte différentes fonctionnalités telles que les fonctions, les sous-requêtes, les sélections, les insertions, les mises à jour, les suppressions, les insertions par sélection, les agrégations, et d'autres opérations possibles :
+
+1. Sélectionnez tous les utilisateurs dont le prénom est "John".
+2. Trouvez le nombre total d'utilisateurs dans la table Users.
+3. Sélectionnez le prénom et le nom de tous les utilisateurs avec leur adresse e-mail.
+4. Sélectionnez les utilisateurs âgés de moins de 30 ans.
+5. Supprimez tous les utilisateurs dont l'adresse e-mail se termine par "@example.com".
+6. Sélectionnez les noms de catégories distinctes dans la table Categories.
+7. Trouvez le nombre total de catégories dans la table Categories.
+8. Sélectionnez tous les produits dont le prix est supérieur à 100.
+9. Sélectionnez les produits dont le stock est épuisé (StockQuantity = 0).
+10. Mettez à jour le prix de tous les produits dans une catégorie spécifique.
+11. Insérez une nouvelle catégorie dans la table Categories.
+12. Supprimez une catégorie spécifique de la table Categories.
+13. Sélectionnez le nom et le prix du produit le moins cher.
+14. Sélectionnez le nombre total de produits dans la table Products.
+15. Trouvez le nombre total de produits dans chaque catégorie.
+16. Sélectionnez les produits avec leur nom de catégorie correspondant.
+17. Trouvez le prix moyen de tous les produits.
+18. Sélectionnez les utilisateurs avec le nombre total de produits achetés.
+19. Insérez un nouvel utilisateur en spécifiant son prénom, nom, adresse e-mail et âge.
+20. Mettez à jour l'adresse e-mail d'un utilisateur spécifique.
+21. Supprimez un utilisateur spécifique de la table Users.
+22. Sélectionnez les utilisateurs avec le nombre total de produits qu'ils ont achetés, classés par ordre décroissant.
+23. Sélectionnez les produits avec le stock le plus élevé.
+24. Trouvez le nombre total de produits dont le prix est inférieur à 50.
+25. Sélectionnez les utilisateurs qui ont acheté au moins un produit dans chaque catégorie.
+26. Sélectionnez le nom de catégorie avec le prix moyen le plus élevé de ses produits.
+27. Insérez un nouveau produit en spécifiant son nom, son prix, sa quantité en stock et sa catégorie.
+28. Mettez à jour le stock d'un produit spécifique.
+29. Supprimez un produit spécifique de la table Products.
+30. Sélectionnez les utilisateurs avec la date de leur première inscription.
+31. Sélectionnez les utilisateurs avec le nombre total de produits qu'ils ont achetés, mais uniquement pour les utilisateurs âgés de moins de 40 ans.
+32. Trouvez le prix le plus élevé parmi tous les produits.
+33. Sélectionnez les utilisateurs avec le nombre total de produits qu'ils ont achetés, classés par ordre croissant d'âge.
+34. Sélectionnez les utilisateurs qui ont acheté le produit le plus cher.
+35. Insérez un nouvel utilisateur en spécifiant son prénom, nom, adresse e-mail, âge et date d'inscription.
+36. Mettez à jour la catégorie d'un produit spécifique.
+37. Supprimez tous les produits dont le prix est inférieur à 10.
+38. Sélectionnez les utilisateurs avec le nombre total de produits qu'ils ont achetés, mais uniquement pour les utilisateurs dont le prénom commence par "A".
+39. Sélectionnez les produits avec la catégorie à laquelle ils appartiennent, triés par ordre alphabétique du nom de la catégorie.
+40. Trouvez le prix moyen des produits dans chaque catégorie.
+41. Sélectionnez les utilisateurs avec le nombre total de produits qu'ils ont achetés, mais uniquement pour les utilisateurs ayant acheté plus de 5 produits.
+42. Insérez un nouveau produit en spécifiant son nom, son prix, sa quantité en stock, sa catégorie et sa date d'ajout.
+43. Mettez à jour le nom d'une catégorie spécifique.
+44. Supprimez tous les utilisateurs ayant acheté un produit spécifique.
+45. Sélectionnez les utilisateurs avec le nombre total de produits qu'ils ont achetés, mais uniquement pour les utilisateurs ayant dépensé plus de 500 en tout.
+46. Trouvez le nombre total de produits dont le stock est inférieur à 10.
+47. Sélectionnez les produits avec la catégorie à laquelle ils appartiennent, triés par ordre décroissant du stock.
+48. Trouvez le prix moyen des produits achetés par les utilisateurs âgés de moins de 30 ans.
+49. Sélectionnez les utilisateurs avec le nombre total de produits qu'ils ont achetés, classés par ordre décroissant de la date d'inscription.
+50. Sélectionnez les utilisateurs avec le nombre total de produits qu'ils ont achetés, mais uniquement pour les utilisateurs ayant dépensé plus de 1000 en tout, et triés par ordre croissant de l'âge.

@@ -3,7 +3,7 @@
 ### User (name, age)
 ### Colors (user.name, color(nullable)
 
-# QUerys
+# Querys
 
 1. **Sélectionner tous les utilisateurs et leurs âges** :
    ```sql
